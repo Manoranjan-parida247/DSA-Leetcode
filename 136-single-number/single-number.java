@@ -3,6 +3,7 @@
 
 // Time complexity -> O(N);
 // Space Complexity -> O(N)
+/*
 class Solution {
     public int singleNumber(int[] nums) {
         int n = nums.length;
@@ -18,5 +19,20 @@ class Solution {
             }
         }
         return -1;
+    }
+}
+*/
+// Time complexity -> O(N);
+// Space Complexity -> O(1)
+
+class Solution {
+    public int singleNumber(int[] nums) {
+        int res = 0;
+
+        for(int num : nums){
+            res = res ^ num;
+        }
+
+        return res;
     }
 }
