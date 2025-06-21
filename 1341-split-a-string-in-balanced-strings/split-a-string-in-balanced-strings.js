@@ -35,6 +35,7 @@ var balancedStringSplit = function (s) {
         char === 'L' ? count++ : count-- ;
         
         if(count === 0) ans++;
+        
     }
     return ans;
 }
