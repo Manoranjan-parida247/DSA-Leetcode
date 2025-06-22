@@ -12,10 +12,12 @@ var groupAnagrams = function(strs) {
         const sortedStr = str.split('').sort().join('');
 
         if(!map.has(sortedStr)){
-            map.set(sortedStr, []);
+            map.set(sortedStr, [str]);
+        }else{
+            map.get(sortedStr).push(str);
         }
 
-        map.get(sortedStr).push(str);
+        
     }
 
     return Array.from(map.values());
