@@ -10,11 +10,12 @@ var isAnagram = function(s, t) {
 
     for(let i = 0; i < s.length; i++){
         sFreqArr[s[i].charCodeAt(0) - 'a'.charCodeAt(0)]++;
-    }
-
-    for(let i = 0; i < t.length; i++){
         sFreqArr[t[i].charCodeAt(0) - 'a'.charCodeAt(0)]--;
     }
+
+    // for(let i = 0; i < t.length; i++){
+    //     sFreqArr[t[i].charCodeAt(0) - 'a'.charCodeAt(0)]--;
+    // }
 
     for(const freq of sFreqArr){
         if(freq !== 0) return false;
