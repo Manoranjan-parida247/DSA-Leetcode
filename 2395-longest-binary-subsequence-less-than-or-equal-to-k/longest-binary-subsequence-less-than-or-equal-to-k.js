@@ -18,7 +18,6 @@ var longestSubsequence = function (s, k) {
             } else {
                 // binaryValue -= (2 ** (n - i - 1));
                 binaryValue -= (n-i-1) << 1;
-
             }
 
         }
