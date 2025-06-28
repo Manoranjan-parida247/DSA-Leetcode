@@ -23,18 +23,35 @@
 //     return false;
 // };
 
+// var hasCycle = function(head) {
+//     if(head === null) return false;
+//     let slow = head;
+//     let fast = head.next; // head.next cause if fast = head . the while loop never exeecute
+
+//     while(slow !== fast){
+
+//         if(fast === null || fast.next === null) return false;
+
+//         slow = slow.next;
+//         fast = fast.next.next;
+//     }
+
+//     return true;
+// }
+
+
 var hasCycle = function(head) {
-    if(head === null) return false;
+    if (head === null || head.next === null) return false;
+
     let slow = head;
-    let fast = head.next;
+    let fast = head;
 
-    while(slow !== fast){
-
-        if(fast === null || fast.next === null) return false;
-
+    while (fast !== null && fast.next !== null) {
         slow = slow.next;
         fast = fast.next.next;
+
+        if (slow === fast) return true; // cycle detected
     }
 
-    return true;
-}
+    return false; // fast reached the end, no cycle
+};
