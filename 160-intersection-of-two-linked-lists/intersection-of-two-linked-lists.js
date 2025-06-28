@@ -20,12 +20,15 @@ var getIntersectionNode = function(headA, headB) {
         curr = curr.next;
     }
 
+    //check for the intersect node in set while traverssing headB linkedlist
     curr = headB;
-
     while(curr !== null){
         if(seenNodes.has(curr)){
             return curr;
         }
         curr = curr.next;
     }
+
+    // if no intersection point found
+    return null;
 };
