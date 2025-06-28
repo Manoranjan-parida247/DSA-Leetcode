@@ -23,7 +23,7 @@ var isPalindrome = function(head) {
     let secondHalf = reverseList(slow);
     let temp = head;
 
-    while(secondHalf !== null){
+    while(secondHalf !== null && temp !== null){
         if(temp.val !== secondHalf.val){
             return false;
         }
