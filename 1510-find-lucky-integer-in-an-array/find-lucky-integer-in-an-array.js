@@ -7,7 +7,8 @@ var findLucky = function(arr) {
 
     for(const num of arr){
         let count = (freqMap.get(num) || 0)  + 1;
-        freqMap.set(num, (freqMap.get(num)||0)+1);
+        freqMap.set(num,count);
+        // freqMap.set(num, (freqMap.get(num)||0)+1);
     }
 
     let lucky = -1;
