@@ -1,29 +1,29 @@
 //T.C -> O(NlogN)
 //S.C -> O(1)
-// class Solution {
-//     public boolean isAnagram(String s, String t) {
-//         if(s.length() != t.length())
-//         {
-//             return false;
-//         }
-//         /*
-//         char[] s1 = s.toCharArray();
-//         char[] s2 = t.toCharArray();
-//         Arrays.sort(s1);
-//         Arrays.sort(s2);
-//         if(Arrays.equals(s1,s2))
-//         {
-//             return true;
-//         }
-//         return false;
-//         */
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length() != t.length())
+        {
+            return false;
+        }
+        
+        char[] s1 = s.toCharArray();
+        char[] s2 = t.toCharArray();
+        Arrays.sort(s1);
+        Arrays.sort(s2);
+        if(Arrays.equals(s1,s2))
+        {
+            return true;
+        }
+        return false;
+        
 
 
-//     }
-// }
+    }
+}
 
 //What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
-/*
+
 //T.C -> O(N)
 //S.C -> O(N)
 import java.util.HashMap;
@@ -56,9 +56,9 @@ public class Solution {
         return countMap.isEmpty();
     }
 }
-*/
 
-/*
+
+
 public class Solution {
     public boolean isAnagram(String s, String t) {
         if(s.length() != t.length())
@@ -85,9 +85,9 @@ public class Solution {
         return true;
     }
 }
-*/
+
 //if string contains all ASCII characters
-/*
+
 public class Solution {
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {
@@ -114,7 +114,7 @@ public class Solution {
         return true;
     }
 }
-*/
+
 
 
 public class Solution {
