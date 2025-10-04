@@ -1,32 +1,29 @@
 class Solution {
-    public int maxArea(int[] arr) {
-        int n = arr.length;
-        if (n < 2) {
-            return 0; // Not enough lines to hold water
+    public int maxArea(int[] height) {
+        int n = height.length;
+        if(n < 2){
+            return 0;
         }
 
-        int left = 0, right = n - 1;
-        int maxWater = 0;
+        int i = 0;
+        int j = n-1;
 
-        while (left < right) {
-            // Calculate the width of the container
-            int width = right - left;
+        int maxArea = 0;
 
-            // Calculate the height of the container as the min of the two lines
-            int height = Math.min(arr[left], arr[right]);
-            
-            // Calculate the area and update the maximum water
-            int currentWater = width * height;
-            maxWater = Math.max(maxWater, currentWater);
+        while(i < j){
+            int w = j - i;
+            int h = Math.min(height[i], height[j]);
 
-            // Move the pointer of the shorter line inward
-            if (arr[left] < arr[right]) {
-                left++;
-            } else {
-                right--;
+            int currArea = w * h;
+            maxArea = Math.max(maxArea, currArea);
+
+            if(height[i] < height[j]){
+                i++;
+            }else{
+                j--;
             }
         }
 
-        return maxWater;
+        return maxArea;
     }
 }
