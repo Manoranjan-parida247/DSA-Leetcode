@@ -38,7 +38,7 @@ class Solution {
             res.add(el1);
         }
 
-        if(cnt2 > mini && el2 != el1){
+        if(cnt2 > mini ){
             res.add(el2);
         }
 
