@@ -12,10 +12,10 @@ class Solution {
             }
 
             if(idx == 2){
-                return res;
+                break;
             }
         }
 
-        return null;
+        return res;
     }
 }
