@@ -11,15 +11,14 @@ class Solution {
             char chS = s.charAt(i);
             char chT = t.charAt(i);
 
-            if(map.containsKey(chS)){
+            if(map.containsKey(chS)){ // key already exist
                 if(map.get(chS) != chT){
                     return false;
                 }
-            }else if(map.containsValue(chT)){
+            }else if(map.containsValue(chT)){ // value already exist
                 return false;
-            }
-            else{
-                map.put(chS, chT);
+            }else{
+                map.put(chS, chT); // mapping doesn't exist
             }
         }
 
