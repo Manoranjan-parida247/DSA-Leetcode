@@ -1,35 +1,28 @@
 class Solution {
     public boolean isIsomorphic(String s, String t) {
-        // If lengths differ, not isomorphic
-        if (s.length() != t.length()) return false;
+        int n = s.length();
+        int m = t.length();
 
-        // Maps characters from s -> t
-        Map<Character, Character> map = new HashMap<>();
-        // Keeps track of characters in t already mapped
-        Set<Character> used = new HashSet<>();
+        if(n != m) return false;
 
-        for (int i = 0; i < s.length(); i++) {
-            char charS = s.charAt(i);
-            char charT = t.charAt(i);
+        HashMap<Character, Character> map = new HashMap<>();
 
-            // Case 1: If mapping already exists
-            if (map.containsKey(charS)) {
-                // Check consistency
-                if (map.get(charS) != charT) {
+        for(int i = 0; i < n; i++){
+            char chS = s.charAt(i);
+            char chT = t.charAt(i);
+
+            if(map.containsKey(chS)){
+                if(map.get(chS) != chT){
                     return false;
                 }
-            } 
-            // Case 2: If no mapping exists yet
-            else {
-                // But if target char already used -> conflict
-                if (used.contains(charT)) {
-                    return false;
-                }
-                // Create new mapping
-                map.put(charS, charT);
-                used.add(charT);
+            }else if(map.containsValue(chT)){
+                return false;
+            }
+            else{
+                map.put(chS, chT);
             }
         }
-        return true; // All checks passed
+
+        return true;
     }
 }
