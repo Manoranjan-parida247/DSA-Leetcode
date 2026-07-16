@@ -20,7 +20,7 @@ class Solution {
 
         if(size == n) return head.next;
 
-        int idx = size - n; // 3
+        int idx = size - n; 
         temp = head;
         int cnt = 0;
 
