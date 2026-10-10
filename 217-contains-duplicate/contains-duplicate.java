@@ -1,12 +1,15 @@
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        // HashMap
+        // HashSet
         int n = nums.length;
-        HashMap<Integer, Integer> map = new HashMap<>(); // nums[i], it's frequency
+        HashSet<Integer> set = new HashSet<>();
 
         for(int i = 0; i < n; i++){
-            map.put(nums[i], map.getOrDefault(nums[i], 0)+1);
-            if(map.get(nums[i]) >= 2) return true;
+            if(set.contains(nums[i])){
+                return true;
+            }else{
+                set.add(nums[i]);
+            }
         }
 
         return false;
